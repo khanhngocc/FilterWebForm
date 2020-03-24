@@ -12,7 +12,7 @@ namespace FilterWebForm
     {
         static int pageCount;
         static int pageIndex = 1;
-        int pageSize = 5;
+        int pageSize = 20;
         
         OrderDAO orderDAO = new OrderDAO();
         EmployeeDAO employeeDAO = new EmployeeDAO();

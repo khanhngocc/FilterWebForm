@@ -45,6 +45,8 @@ namespace FilterWebForm.DAO
             {
                 num = reader.GetInt32(0);
             }
+
+            cnn.Close();
             return num;
         }
 
@@ -77,8 +79,10 @@ namespace FilterWebForm.DAO
             query += " FETCH NEXT @val6 ROWS ONLY";
 
             SqlCommand command = new SqlCommand(query, cnn);
-            command.Parameters.AddWithValue("@val1", order.DateFrom);
-            command.Parameters.AddWithValue("@val2", order.DateTo);
+            command.Parameters.AddWithValue("@val1",  Convert.ToDateTime(order.DateFrom).ToString("yyyy-MM-dd",
+System.Globalization.DateTimeFormatInfo.InvariantInfo));
+            command.Parameters.AddWithValue("@val2", Convert.ToDateTime(order.DateTo).ToString("yyyy-MM-dd",
+System.Globalization.DateTimeFormatInfo.InvariantInfo));
             command.Parameters.AddWithValue("@val5",numberOfRecord);
             command.Parameters.AddWithValue("@val6", pageSize);
 

@@ -18,9 +18,7 @@
             </asp:DropDownList>
             <asp:Calendar ID="caFrom" runat="server" OnSelectionChanged="caFrom_SelectionChanged"></asp:Calendar>
             <asp:Calendar ID="caTo" runat="server" OnSelectionChanged="caTo_SelectionChanged"></asp:Calendar>
-         
-        
-            <asp:ListView EnableViewState="false" ID="lOrder" runat="server">
+         <asp:ListView EnableViewState="false" ID="lOrder" runat="server">
                 <LayoutTemplate>
                     <table cellpadding="2" width="640px" border="1" id="tbl1" runat="server">
                         <tr runat="server" style="background-color: #98FB98">
